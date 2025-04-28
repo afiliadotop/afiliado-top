@@ -1,0 +1,13 @@
+{
+"name": "Afiliado Top",
+"short_name": "AfiliadoTop",
+"start_url": "/",
+"display": "standalone",
+"background_color": "#ffffff",
+"description": "Achados e ofertas diárias no Afiliado.top!",
+"icons": [{
+"src": "/img/favicon.ico",
+"sizes": "64x64",
+"type": "image/x-icon"
+}]
+}
