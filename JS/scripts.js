@@ -102,3 +102,55 @@ document.getElementById('btn-completar-missao').addEventListener('click', () => 
   nivel = 2;
   document.getElementById('popup-missao').style.display = 'none';
 });
+let pontos = 0;
+let nivelAtual = "Noob das Ofertas";
+
+function atualizarPainel() {
+  document.getElementById('pontos').innerText = `Pontos: ${pontos}`;
+  document.getElementById('nivel').innerText = `Nível: ${nivelAtual}`;
+}
+
+function checarNivel() {
+  if (pontos >= 1500) {
+    nivelAtual = "Lenda dos Cupons";
+  } else if (pontos >= 800) {
+    nivelAtual = "Mestre Afiliado";
+  } else if (pontos >= 400) {
+    nivelAtual = "Pro das Promoções";
+  } else if (pontos >= 150) {
+    nivelAtual = "Caçador de Descontos";
+  } else {
+    nivelAtual = "Noob das Ofertas";
+  }
+  atualizarPainel();
+}
+
+// Ganha pontos a cada 5 minutos
+setInterval(() => {
+  pontos += 50;
+  checarNivel();
+}, 300000); // 300 mil ms = 5 minutos
+
+// Aparece popup de missão a cada 5 minutos
+setInterval(() => {
+  document.getElementById('popup-missao').style.display = 'block';
+}, 300000);
+
+// Quando o usuário clicar no botão da missão
+document.getElementById('btn-missao').addEventListener('click', () => {
+  let links = [
+    'https://singingfiles.com/show.php?l=0&u=2381480&id=41025&tracking_id=AfiliadoTop',
+    'https://singingfiles.com/show.php?l=0&u=2381480&id=54731&tracking_id=AfiliadoTop'
+  ];
+  
+  let linkAleatorio = links[Math.floor(Math.random() * links.length)];
+  window.open(linkAleatorio, '_blank');
+  
+  pontos += 100; // Ganha 100 pontos por clicar na missão
+  checarNivel();
+  
+  document.getElementById('popup-missao').style.display = 'none';
+});
+
+// Atualiza o painel inicial
+atualizarPainel();
