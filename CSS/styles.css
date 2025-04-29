@@ -220,3 +220,84 @@ body {
     padding: 0.6rem;
   }
 }
+/* Contador normal */
+.contador-visualizacoes {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  background: #ffffff;
+  border: 2px solid #4CAF50;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  z-index: 9999;
+}
+
+/* Estilo do Popup de Prêmio */
+.popup-premio {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-conteudo {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  max-width: 400px;
+  width: 90%;
+  animation: pulse 1s infinite alternate;
+}
+
+.popup-conteudo h2 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.popup-conteudo p {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.btn-premio {
+  background: #4CAF50;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-premio:hover {
+  background: #388E3C;
+}
+
+/* Botão de Fechar */
+#fechar-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
