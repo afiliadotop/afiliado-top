@@ -86,3 +86,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+let tempoNoSite = 0;
+let nivel = 1;
+
+setInterval(() => {
+  tempoNoSite += 1; // Cada minuto
+
+  if (tempoNoSite === 5 && nivel === 1) {
+    document.getElementById('popup-missao').style.display = 'block';
+  }
+}, 60000); // 60000ms = 1 minuto
+
+document.getElementById('btn-completar-missao').addEventListener('click', () => {
+  window.open('https://linkcpa.com/sualink', '_blank'); // Seu link CPA aqui
+  nivel = 2;
+  document.getElementById('popup-missao').style.display = 'none';
+});
