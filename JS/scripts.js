@@ -38,6 +38,16 @@ document.addEventListener('DOMContentLoaded', function() {
   const numeroVisualizacoes = document.getElementById('numero-visualizacoes');
   const popupPremio = document.getElementById('popup-premio');
   const fecharPopup = document.getElementById('fechar-popup');
+  const btnPremio = document.querySelector('.btn-premio');
+
+  // Lista de prêmios (links de afiliados diferentes)
+  const premios = [
+    { texto: "Desconto Shopee!", link: "https://s.shopee.com.br/AUh1TEvm0E" },
+    { texto: "Oferta Amazon Prime!", link: "https://amzn.to/3EJeRME" },
+    { texto: "Ganhe com TEMU!", link: "https://temu.to/k/equr463rppl" },
+    { texto: "Cupom Especial para Você!", link: "https://seu-link-especial.com" },
+    { texto: "Promoção Surpresa!", link: "https://outro-link-afiliado.com" }
+  ];
 
   function aumentarContador() {
     visualizacoes++;
@@ -45,19 +55,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mostrar popup de prêmio a cada 3 visualizações
     if (visualizacoes % 3 === 0) {
-      popupPremio.style.display = 'flex';
+      mostrarPremio();
     }
   }
 
-  // Intervalo para aumentar visualizações
-  setInterval(aumentarContador, 300000); // 5 minutos
+  function mostrarPremio() {
+    // Escolhe aleatoriamente um prêmio da lista
+    const premioSorteado = premios[Math.floor(Math.random() * premios.length)];
+
+    // Atualiza o texto e o link do botão
+    document.querySelector('.popup-conteudo h2').textContent = "Parabéns!";
+    document.querySelector('.popup-conteudo p').textContent = premioSorteado.texto;
+    btnPremio.href = premioSorteado.link;
+
+    popupPremio.style.display = 'flex';
+  }
+
+  // Intervalo para aumentar visualizações (5 minutos = 300000ms)
+  setInterval(aumentarContador, 300000);
 
   // Botão para fechar o popup
   fecharPopup.addEventListener('click', function() {
     popupPremio.style.display = 'none';
   });
 
-  // Também fecha se clicar fora da caixa
+  // Fecha ao clicar fora do conteúdo
   popupPremio.addEventListener('click', function(e) {
     if (e.target === popupPremio) {
       popupPremio.style.display = 'none';
