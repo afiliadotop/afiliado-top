@@ -33,3 +33,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa a visibilidade do botão ao carregar
     toggleBtnTopo();
 });
+document.addEventListener('DOMContentLoaded', function() {
+  let visualizacoes = 0;
+  const numeroVisualizacoes = document.getElementById('numero-visualizacoes');
+  const popupPremio = document.getElementById('popup-premio');
+  const fecharPopup = document.getElementById('fechar-popup');
+
+  function aumentarContador() {
+    visualizacoes++;
+    numeroVisualizacoes.textContent = visualizacoes;
+
+    // Mostrar popup de prêmio a cada 3 visualizações
+    if (visualizacoes % 3 === 0) {
+      popupPremio.style.display = 'flex';
+    }
+  }
+
+  // Intervalo para aumentar visualizações
+  setInterval(aumentarContador, 300000); // 5 minutos
+
+  // Botão para fechar o popup
+  fecharPopup.addEventListener('click', function() {
+    popupPremio.style.display = 'none';
+  });
+
+  // Também fecha se clicar fora da caixa
+  popupPremio.addEventListener('click', function(e) {
+    if (e.target === popupPremio) {
+      popupPremio.style.display = 'none';
+    }
+  });
+});
