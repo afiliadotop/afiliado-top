@@ -1,2 +1,54 @@
-/* Estilos para impressão */
-@media print { body { background: #fff; color: #000; } }
+@media print {
+  /* Remove fundo e força texto em preto para economizar tinta e garantir legibilidade */
+  body {
+    background: none;  /* sem cor ou imagem de fundo */
+    color: #000;        /* texto sempre preto */
+  }
+
+  /* Esconde cabeçalho, rodapé, menu de navegação e banner “hero” */
+  header,
+  footer,
+  nav,
+  .hero {
+    display: none;      /* não exibe esses elementos na impressão */
+  }
+
+  /* Remove espaçamento interno das seções para usar melhor o papel */
+  section {
+    padding: 0;         /* sem padding */
+  }
+
+  /* Faz qualquer container de largura fixa se expandir para 100% da página */
+  .container {
+    width: 100%;        /* ocupa toda a largura disponível */
+  }
+
+  /* Garante que todos os títulos fiquem em preto puro */
+  h1,
+  h2,
+  h3 {
+    color: #000;        /* títulos em preto */
+  }
+
+  /* Opcional: ajusta imagens para caber sem estourar margens */
+  img {
+    max-width: 100%;    /* largura máxima igual à largura da página */
+    height: auto;       /* mantém proporção */
+  }
+
+  /* Exibe URLs de links entre colchetes após o texto */
+  a[href]:after {
+    content: " [" attr(href) "]"; /* mostra o endereço completo */
+    font-size: 90%;              /* fonte levemente menor */
+  }
+
+  /* Controla margens da página impressa */
+  @page {
+    margin: 1.5cm;      /* define margem de 1,5 cm em todos os lados */
+  }
+
+  /* Exemplo de quebra de página antes de cada <h2> */
+  h2 {
+    page-break-before: always; /* inicia nova folha antes de cada subtítulo */
+  }
+}
