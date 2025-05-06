@@ -36,63 +36,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPJC7X9N5H"></script>
   <script src="analytics.js" defer></script> 
   
-  <!-- Adicione isto ao CSS existente -->
-  <style>
-    /* Novos estilos para o sistema de caça ao tesouro */
-    .badge-missao {
-      background: linear-gradient(45deg, #FFD700, #C5A000);
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-weight: bold;
-      display: inline-block;
-      margin: 10px 0;
-    }
-
-    .ranking-list {
-      counter-reset: ranking;
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .ranking-list li {
-      counter-increment: ranking;
-      padding: 15px;
-      margin: 10px 0;
-      background: #262626;
-      border-radius: 8px;
-      position: relative;
-    }
-
-    .ranking-list li::before {
-      content: counter(ranking);
-      position: absolute;
-      left: -35px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #FFD700;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .btn-secreto {
-      animation: pulse 2s infinite;
-      background: linear-gradient(45deg, #FFD700, #FFA500);
-      padding: 15px 30px;
-      font-size: 1.2em;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-  </style>
+  
 </head>
 
 <body>
