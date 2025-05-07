@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="stylesheet" href="htpps://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
   <meta charset="UTF-8">
   <meta http-equiv="x-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -103,5 +104,23 @@
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="JS/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function () {
+    window.cookieconsent.initialise({
+      palette: {
+        popup: { background: "#000" },
+        button: { background: "#f1d600" }
+      },
+      theme: "classic",
+      content: {
+        message: "Usamos cookies para melhorar sua experiência e rastrear cliques de afiliados.",
+        dismiss: "Aceitar",
+        link: "Saiba mais",
+        href: "/politica-de-privacidade"
+      }
+    });
+  });
+</script>
 </body>
 </html>
