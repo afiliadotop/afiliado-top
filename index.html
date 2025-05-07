@@ -7,44 +7,35 @@
   <title>Afiliado Top - Ofertas e Promoções</title>
   
   <!-- SEO Meta -->
-  <meta name="description" content="No Afiliado Top você encontra as melhores ofertas, promoções relâmpago e achados do dia! Economize agora mesmo com nossos links especiais e ganhe ainda mais benefícios. Atualizações diárias, confiança máxima.">
-  <meta name="keywords" content="Ofertas do dia, Promoções, Cupons de desconto, Produtos baratos, Achados online, Links de afiliado, Ganhar dinheiro online, Descontos exclusivos, Afiliado Top, Melhor preço, Cashback, Promoções Amazon, Promoções Shopee, Ganhar com CPA, Ganhar comissão online">
+  <meta name="description" content="No Afiliado Top você encontra as melhores ofertas, promoções relâmpago e achados do dia!">
+  <meta name="keywords" content="Ofertas do dia, Promoções, Cupons de desconto">
   <meta name="author" content="Paulo Kenato">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.afiliado.top/">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Afiliado Top - Ofertas Imperdíveis!">
-  <meta property="og:description" content="Ofertas e Cupons para você lucrar como afiliado. Veja agora!">
   <meta property="og:image" content="/assets/logo512.png">
-  <meta property="og:url" content="https://www.afiliado.top/">
-  <meta property="og:type" content="website">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Afiliado Top - Ganhe com Ofertas!">
-  <meta name="twitter:description" content="Cupons, promoções e links para aumentar sua renda como afiliado.">
-  <meta name="twitter:image" content="/assets/logo512.png">
   
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="CSS/style.css">
-  <!-- Biblioteca de animação -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+  
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPJC7X9N5H"></script>
-  <script src="analytics.js" defer></script> 
-  
-  
+  <script src="analytics.js" defer></script>
 </head>
 
 <body>
-  <!-- Header Atualizado -->
+  <!-- Header -->
   <header class="header">
     <div class="container">
       <div class="header-badge">
-        <span class="badge-missao">🏴‍☠️ Missão Ativa: Caça ao Tesouro!</span>
+        <span class="badge-missao">🏴☠️ Missão Ativa: Caça ao Tesouro!</span>
       </div>
       <nav>
         <a href="#ofertas">Ofertas</a>
@@ -55,185 +46,62 @@
     </div>
   </header>
 
-  <!-- Seção de Caça ao Tesouro -->
-  <section class="treasure-hunt" data-aos="fade-up">
-    <div class="container">
-      <h1>Caça ao Tesouro de Ofertas <span class="destaque">COMISSÕES 2X</span></h1>
-      <div class="pista-box">
-        <p class="pista-texto">Pista #1: Está na seção de ofertas relâmpago!</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção Ofertas de Ouro (Atualizada) -->
-  <section id="ofertas" class="ofertas">
-    <h2>🪙 Ofertas de Ouro <small>(Comissão Turbo)</small></h2>
-    <div class="grid-ofertas-especiais">
-      <!-- Card 1 -->
-      <div class="card-oferta" data-comissao="15.90">
-        <div class="card-header">
-          <span class="dificuldade">⭐ Dificuldade: Fácil</span>
-          <span class="pontos-recompensa">+50 pts</span>
-        </div>
-        <h3>📁 Download Misterioso</h3>
-        <p class="pista-card">"Encontre o link que começa com 's3cr37'"</p>
-        <a href="[LINK_AFILIADO]" class="btn-ouro" 
-           onclick="atualizarPontos(50)" 
-           data-pista="s3cr37"
-           target="_blank">
-           🔍 Investigar Oferta
-        </a>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="card-oferta" data-comissao="23.50">
-        <div class="card-header">
-          <span class="dificuldade">⭐⭐ Dificuldade: Médio</span>
-          <span class="pontos-recompensa">+75 pts</span>
-        </div>
-        <h3>🔗 Link Enigmático</h3>
-        <p class="pista-card">"Está entre as ofertas de tecnologia"</p>
-        <a href="[LINK_AFILIADO]" class="btn-ouro"
-           onclick="atualizarPontos(75)"
-           target="_blank">
-           🗝️ Revelar Segredo
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sistema de Missões -->
-  <section id="missoes" class="missoes">
-    <div class="container">
-      <h2>⚔️ Missões Diárias</h2>
-      <div class="missoes-grid">
-        <div class="missao-card">
-          <h3>🎯 Missão Relâmpago</h3>
-          <p>Clique em 3 ofertas em 5 minutos</p>
-          <div class="progresso-missao">
-            <div class="barra-progresso" style="width: 33%"></div>
-          </div>
-          <button class="btn-missao" onclick="iniciarMissao(1)">Iniciar Missão</button>
-        </div>
-
-        <div class="missao-card">
-          <h3>💎 Baú Secreto</h3>
-          <p>Encontre o link escondido na página</p>
-          <div class="dica-missao">
-            <button class="btn-dica" onclick="mostrarDica()">Revelar Dica (10 pts)</button>
-          </div>
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Seção de Caça ao Tesouro -->
+    <section class="treasure-hunt" data-aos="fade-up">
+      <div class="container">
+        <h1>Caça ao Tesouro de Ofertas <span class="destaque">COMISSÕES 2X</span></h1>
+        <div class="pista-box">
+          <p class="pista-texto">Pista #1: Está na seção de ofertas relâmpago!</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Ranking Interativo -->
-  <section id="ranking" class="ranking">
-    <div class="container">
-      <h2>🏆 Ranking dos Caçadores</h2>
-      <div class="ranking-wrapper">
-        <div class="ranking-tabela">
-          <div class="ranking-header">
-            <span>Posição</span>
-            <span>Caçador</span>
-            <span>Pontos</span>
-          </div>
-          <div class="ranking-item primeiro">
-            <span>🥇</span>
-            <span>NoobMaster69</span>
-            <span>2400 pts</span>
-          </div>
-          <div class="ranking-item segundo">
-            <span>🥈</span>
-            <span>ClickHunter</span>
-            <span>1820 pts</span>
-          </div>
-          <div class="ranking-item terceiro">
-            <span>🥉</span>
-            <span>AfiliadoMestre</span>
-            <span>1650 pts</span>
-          </div>
-        </div>
-        <div class="seu-ranking">
-          <h3>Sua Posição</h3>
-          <p id="pontos-usuario">0 pts</p>
-          <p>Nível: <span id="nivel-usuario">Iniciante</span></p>
+    <!-- Ofertas de Ouro -->
+    <section id="ofertas" class="ofertas">
+      <h2>🪙 Ofertas de Ouro <small>(Comissão Turbo)</small></h2>
+      <div class="grid-ofertas-especiais">
+        <!-- Cards dinâmicos carregados via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Missões -->
+    <section id="missoes" class="missoes">
+      <div class="container">
+        <h2>⚔️ Missões Diárias</h2>
+        <div class="missoes-grid">
+          <!-- Conteúdo carregado dinamicamente -->
         </div>
       </div>
-    </div>
-  </section>
-<div id="contador-visualizacoes" class="contador-visualizacoes">
-  <p>Você viu <span id="numero-visualizacoes">0</span> ofertas até agora!</p>
-</div>
+    </section>
 
-<!-- Popup de prêmio -->
-<div id="popup-premio" class="popup-premio">
-  <div class="popup-conteudo">
-    <h2>Parabéns!</h2>
-    <p>Você desbloqueou um cupom especial!</p>
-    <a href="https://temu.to/k/equr463rppl" class="btn-premio" target="_blank">Aproveitar agora</a>
-    <span id="fechar-popup">×</span>
-  </div>
-</div>
-  <!-- Baú Secreto (Dinâmico) -->
-  <div id="bau-secreto" class="bau-secreto">
-    <div class="conteudo-bau">
-      <h2>🎉 TESOURO ENCONTRADO!</h2>
-      <p>+100 Pontos Bônus</p>
-      <a href="[LINK_AFILIADO_PREMIUM]" class="btn-secreto"
-         onclick="atualizarPontos(100)">
-         🏆 Resgatar Recompensa Agora
-      </a>
-    </div>
-  </div>
+    <!-- Ranking -->
+    <section id="ranking" class="ranking">
+      <div class="container">
+        <h2>🏆 Ranking dos Caçadores</h2>
+        <div class="ranking-wrapper">
+          <div class="ranking-tabela"></div>
+          <div class="seu-ranking"></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <script>
-    // Sistema de Pontos
-    let pontos = 0;
-    let nivel = 1;
-
-    function atualizarPontos(valor) {
-      pontos += valor;
-      document.getElementById('pontos-usuario').textContent = pontos + ' pts';
-      verificarNivel();
-      sessionStorage.setItem('pontosAfiliado', pontos);
-    }
-
-    function verificarNivel() {
-      const niveis = [100, 300, 600, 1000];
-      nivel = niveis.findIndex(n => pontos < n) + 1;
-      document.getElementById('nivel-usuario').textContent = `Nível ${nivel}`;
-    }
-
-    // Revelar Baú Secreto
-    function revelarBau() {
-      document.getElementById('bau-secreto').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('bau-secreto').scrollIntoView({ behavior: 'smooth' });
-      }, 500);
-    }
-
-    // Ao encontrar link secreto
-    document.querySelectorAll('a[data-pista]').forEach(link => {
-      link.addEventListener('click', function() {
-        if(this.dataset.pista === 's3cr37') revelarBau();
-      });
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      AOS.init({
-        duration: 1000, // Duração das animações
-      });
-    });
-  </script>
-  <!-- Botão Voltar ao Topo -->
-<button id="btn-topo" title="Voltar ao Topo">↑</button>
+  <!-- Elementos interativos -->
+  <div id="contador-visualizacoes" class="contador-visualizacoes"></div>
+  <div id="popup-premio" class="popup-premio"></div>
+  <div id="bau-secreto" class="bau-secreto"></div>
+  
+  <button id="btn-topo" title="Voltar ao Topo">↑</button>
+  
   <footer>
     <div class="container">
       <p>&copy; 2025 Afiliado Top - Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="JS/scripts.js"></script>
 </body>
 </html>
