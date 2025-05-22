@@ -7,7 +7,7 @@ import os
 
 # Seu link do datafeed da Shopee
 # SUBSTITUA PELO SEU LINK REAL DO DATAFEED!
-SHOPEE_DATAFEED_URL = os.environ.get('https://affiliate.shopee.com.br/api/v1/datafeed/download?id=YWJjZGVmZ2hpamtsbW5vcPNcbnfdFhhQkoz1FtnUm6DtED25ejObtofpYLqHBC0h')
+SHOPEE_DATAFEED_URL = os.environ.get('SHOPEE_DATAFEED_URL')
 
 # Nome do arquivo CSV que será baixado temporariamente
 CSV_FILENAME = 'shopee_datafeed.csv'
