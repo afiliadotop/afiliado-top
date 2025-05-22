@@ -32,7 +32,7 @@ jobs:
       env:
         # AQUI é onde seu link do datafeed é passado de forma segura
         # 'SHOPEE_DATAFEED_URL' deve ser adicionado como um Secret no GitHub
-        SHOPEE_DATAFEED_URL: ${{ secrets.SHOPEE_DATAFEED_URL }}
+        SHOPEE_DATAFEED_URL: ${{ https://affiliate.shopee.com.br/api/v1/datafeed/download?id=YWJjZGVmZ2hpamtsbW5vcPNcbnfdFhhQkoz1FtnUm6DtED25ejObtofpYLqHBC0h }}
       run: python process_shopee_datafeed.py
 
     - name: Commit and Push changes # Commita o arquivo JSON gerado de volta para o repositório
