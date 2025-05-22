@@ -34,26 +34,23 @@ def process_csv_to_json(csv_filename, json_filename):
     try:
         # Tenta ler o CSV. A Shopee pode usar ',' ou ';' ou tab como delimitador.
         # Adicione 'encoding' se tiver problemas com caracteres especiais (ex: 'utf-8', 'latin1')
+        # Testar com 'sep=',' ou 'sep=';' se a detecção automática falhar.
         try:
             df = pd.read_csv(csv_filename, encoding='utf-8')
         except UnicodeDecodeError:
             df = pd.read_csv(csv_filename, encoding='latin1')
 
-        # === Adapte esta parte para as colunas reais do seu CSV da Shopee ===
-        # Imprima df.columns para ver os nomes exatos das colunas do seu CSV
-        # print("Colunas disponíveis no CSV:", df.columns.tolist())
-
-        # Colunas que queremos extrair e renomear para o JSON do site
-        # Ajuste 'NOME_DA_COLUNA_DO_CSV' para os nomes reais do seu CSV
-        # E 'nome_desejado_no_json' para como você quer que apareça no JS do seu site
+        # === ESTA É A PARTE CRUCIAL ADAPTADA PARA SEUS NOMES DE COLUNAS ===
+        # Mapeamento das colunas do CSV para os nomes que você deseja no JSON do seu site.
         required_columns = {
-            'product_name': 'nome',       # Exemplo: Nome do Produto no CSV -> 'nome' no JSON
-            'image_url': 'imagem',        # Exemplo: URL da Imagem no CSV -> 'imagem' no JSON
-            'product_url': 'link_produto_shopee', # Link direto para o produto na Shopee
-            'affiliate_link': 'link',     # ESTE É O SEU LINK DE AFILIADO
-            'product_description': 'descricao', # Exemplo: Descrição do produto no CSV -> 'descricao' no JSON
-            'category': 'categoria',      # Exemplo: Categoria do produto no CSV -> 'categoria' no JSON
-            'price': 'preco'              # Exemplo: Preço do produto no CSV -> 'preco' no JSON
+            'title': 'nome',                  # 'title' do CSV vira 'nome' no JSON
+            'image_link': 'imagem',           # 'image_link' do CSV vira 'imagem' no JSON
+            'description': 'descricao',       # 'description' do CSV vira 'descricao' no JSON
+            'product_link': 'link',           # 'product_link' do CSV vira 'link' (seu link de afiliado) no JSON
+            'global_category1': 'categoria',  # 'global_category1' do CSV vira 'categoria' no JSON
+            'price': 'preco'                  # 'price' do CSV vira 'preco' no JSON
+            # Você pode adicionar outras colunas que achar úteis, como 'shop_name', 'sale_price', etc.
+            # Apenas adicione-as aqui no mapeamento.
         }
 
         # Verifica se todas as colunas necessárias estão presentes no CSV
@@ -69,8 +66,12 @@ def process_csv_to_json(csv_filename, json_filename):
         # Trata valores NaN (Not a Number) ou vazios, substituindo por string vazia
         df_selected = df_selected.fillna('')
 
-        # Opcional: Filtre produtos aqui se necessário (ex: por categoria, por preço)
-        # df_selected = df_selected[df_selected['categoria'] == 'Eletrônicos']
+        # Opcional: Filtrar produtos com base em 'product_link' não vazio
+        # df_selected = df_selected[df_selected['link'] != '']
+
+        # Opcional: Converter 'preco' para float se ele vier como string e precisar de cálculos
+        # df_selected['preco'] = pd.to_numeric(df_selected['preco'], errors='coerce').fillna(0.0)
+
 
         # Converte o DataFrame para uma lista de dicionários (formato JSON)
         products_json = df_selected.to_dict(orient='records')
@@ -96,4 +97,3 @@ if __name__ == "__main__":
 
     download_csv(SHOPEE_DATAFEED_URL, CSV_FILENAME)
     process_csv_to_json(CSV_FILENAME, JSON_FILENAME)
-
